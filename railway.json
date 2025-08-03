@@ -2,7 +2,7 @@
   "$schema": "https://railway.app/railway.schema.json",
   "build": {
     "builder": "NIXPACKS",
-    "buildCommand": "composer install --ignore-platform-reqs --no-dev --optimize-autoloader && mkdir -p data/cache data/log data/session public/docs-client/upload public/imgs-client/upload && chmod -R 755 data/cache data/log data/session public/docs-client/upload public/imgs-client/upload && cp config/init.php.dist config/init.php && cp public/.htaccess_original public/.htaccess && cat > config/autoload/local.php << 'EOF'\n<?php\nreturn [\n    'db' => [\n        'database' => getenv('DB_NAME') ?: 'railway',\n        'username' => getenv('DB_USER') ?: 'root',\n        'password' => getenv('DB_PASSWORD') ?: '',\n        'hostname' => getenv('DB_HOST') ?: 'localhost',\n        'port' => getenv('DB_PORT') ?: 3306,\n    ],\n    'mail' => [\n        'type' => 'sendmail',\n        'address' => 'info@bookings.example.com',\n    ],\n    'i18n' => [\n        'locale' => 'en-US',\n        'timezone' => 'Europe/Berlin',\n    ],\n];\nEOF"
+    "buildCommand": "composer install --ignore-platform-reqs --no-dev --optimize-autoloader && mkdir -p data/cache data/log data/session public/docs-client/upload public/imgs-client/upload && chmod -R 755 data/cache data/log data/session public/docs-client/upload public/imgs-client/upload && cp config/init.php.dist config/init.php && cp public/.htaccess_original public/.htaccess && ./create-config.sh"
   },
   "deploy": {
     "startCommand": "php -S 0.0.0.0:$PORT -t public -d display_errors=1 -d log_errors=1",
