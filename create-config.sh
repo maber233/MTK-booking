@@ -5,11 +5,11 @@ cat > config/autoload/local.php << 'EOF'
 <?php
 return [
     'db' => [
-        'database' => $_ENV['DB_NAME'] ?? 'railway',
-        'username' => $_ENV['DB_USER'] ?? 'root',
-        'password' => $_ENV['DB_PASSWORD'] ?? '',
-        'hostname' => $_ENV['DB_HOST'] ?? 'localhost',
-        'port' => $_ENV['DB_PORT'] ?? 3306,
+        'database' => $_ENV['DATABASE_NAME'] ?? 'railway',
+        'username' => $_ENV['DATABASE_USER'] ?? 'root',
+        'password' => $_ENV['DATABASE_PASSWORD'] ?? '',
+        'hostname' => $_ENV['DATABASE_HOST'] ?? 'localhost',
+        'port' => $_ENV['DATABASE_PORT'] ?? 3306,
     ],
     'mail' => [
         'type' => 'sendmail',
