@@ -1,7 +1,8 @@
 {
   "$schema": "https://railway.app/railway.schema.json",
   "build": {
-    "builder": "NIXPACKS"
+    "builder": "NIXPACKS",
+    "buildCommand": "composer install --ignore-platform-reqs --no-dev --optimize-autoloader && mkdir -p data/cache data/log data/session public/docs-client/upload public/imgs-client/upload && chmod -R 755 data/cache data/log data/session public/docs-client/upload public/imgs-client/upload && cp config/init.php.dist config/init.php && cp config/autoload/local.php.dist config/autoload/local.php && cp public/.htaccess_original public/.htaccess"
   },
   "deploy": {
     "startCommand": "php -S 0.0.0.0:$PORT -t public",
