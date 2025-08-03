@@ -8,13 +8,7 @@ nixPkgs = ["php81", "php81Packages.composer"]
 cmd = "composer install --ignore-platform-reqs --no-dev --optimize-autoloader"
 
 [phases.build]
-cmd = """
-mkdir -p data/cache data/log data/session public/docs-client/upload public/imgs-client/upload
-chmod -R 755 data/cache data/log data/session public/docs-client/upload public/imgs-client/upload
-cp -n config/init.php.dist config/init.php 2>/dev/null || true
-cp -n config/autoload/local.php.dist config/autoload/local.php 2>/dev/null || true  
-cp -n public/.htaccess_original public/.htaccess 2>/dev/null || true
-"""
+cmd = "mkdir -p data/cache data/log data/session public/docs-client/upload public/imgs-client/upload && chmod -R 755 data/cache data/log data/session public/docs-client/upload public/imgs-client/upload && cp -n config/init.php.dist config/init.php && cp -n config/autoload/local.php.dist config/autoload/local.php && cp -n public/.htaccess_original public/.htaccess"
 
 [start]
 cmd = "cd public && php -S 0.0.0.0:$PORT"
