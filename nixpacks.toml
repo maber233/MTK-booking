@@ -1,0 +1,16 @@
+providers = ["php"]
+
+[variables]
+PHP_VERSION = "8.0"
+
+[phases.setup]
+nixPkgs = ["php80", "php80Packages.composer"]
+
+[phases.install]
+cmd = "composer install --ignore-platform-reqs --no-dev --optimize-autoloader"
+
+[phases.build]
+cmd = "mkdir -p data/cache data/log data/session public/docs-client/upload public/imgs-client/upload && chmod -R 755 data/cache data/log data/session public/docs-client/upload public/imgs-client/upload && cp config/init.php.dist config/init.php && cp config/autoload/local.php.dist config/autoload/local.php && cp public/.htaccess_original public/.htaccess"
+
+[start]
+cmd = "php -S 0.0.0.0:$PORT -t public -d display_errors=1 -d log_errors=1"
