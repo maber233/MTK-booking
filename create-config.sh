@@ -18,6 +18,11 @@ return [
     'i18n' => [
         'locale' => 'en-US',
         'timezone' => 'Europe/Berlin',
+        'choice' => [
+            'en-US' => 'English (US)',
+            'de-DE' => 'Deutsch',
+            'fr-FR' => 'Français',
+        ],
     ],
 ];
 EOF

@@ -56,13 +56,15 @@ class ConfigLocaleListener extends AbstractListenerAggregate
                             $acceptedLocaleParts = preg_split('/[\-\_]/', $acceptedLocale->getLanguage());
                             $acceptedLocalePart = $acceptedLocaleParts[0];
 
-                            foreach ($configI18n['choice'] as $locale => $title) {
-                                $localeParts = preg_split('/[\-\_]/', $locale);
-                                $localePart = $localeParts[0];
+                            if (isset($configI18n['choice']) && is_array($configI18n['choice'])) {
+                                foreach ($configI18n['choice'] as $locale => $title) {
+                                    $localeParts = preg_split('/[\-\_]/', $locale);
+                                    $localePart = $localeParts[0];
 
-                                if ($localePart == $acceptedLocalePart) {
-                                    $configManager->set('i18n.locale', $locale);
-                                    break 2;
+                                    if ($localePart == $acceptedLocalePart) {
+                                        $configManager->set('i18n.locale', $locale);
+                                        break 2;
+                                    }
                                 }
                             }
                         }
