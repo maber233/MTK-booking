@@ -22,6 +22,7 @@ return [
             'en-US' => 'English (US)',
             'de-DE' => 'Deutsch',
             'fr-FR' => 'Français',
+            'sv-SE' => 'Svenska',
         ],
     ],
 ];
