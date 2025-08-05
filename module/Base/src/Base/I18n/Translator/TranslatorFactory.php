@@ -14,6 +14,10 @@ class TranslatorFactory implements FactoryInterface
         $configManager = $sm->get('Base\Manager\ConfigManager');
 
         $locale = $configManager->need('i18n.locale');
+        $i18nConfig = $configManager->need('i18n');
+        
+        // Get default locale from config as fallback
+        $defaultLocale = isset($i18nConfig['locale']) ? $i18nConfig['locale'] : 'en-US';
 
         $translator = new Translator();
 
@@ -38,6 +42,14 @@ class TranslatorFactory implements FactoryInterface
         $translator->addTranslationFilePattern('phparray', getcwd() . '/data/res/i18n-custom/', '%s/user.php');
 
         $translator->setLocale($locale);
+        
+        // Set fallback locale to prevent missing translations
+        if ($locale !== $defaultLocale) {
+            $translator->setFallbackLocale($defaultLocale);
+        } else {
+            // If current locale is already the default, use English as ultimate fallback
+            $translator->setFallbackLocale('en-US');
+        }
 
         return new \Zend\Mvc\I18n\Translator($translator);
     }
