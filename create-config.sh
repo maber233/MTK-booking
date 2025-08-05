@@ -12,8 +12,15 @@ return [
         'port' => $_ENV['DATABASE_PORT'] ?? 3306,
     ],
     'mail' => [
-        'type' => 'sendmail',
-        'address' => 'info@bookings.example.com',
+        'type' => $_ENV['MAIL_TYPE'] ?? 'file',
+        'address' => $_ENV['MAIL_FROM'] ?? 'info@bookings.example.com',
+        
+        // SMTP settings (used when MAIL_TYPE is 'smtp' or 'smtp-tls')
+        'host' => $_ENV['MAIL_HOST'] ?? 'localhost',
+        'user' => $_ENV['MAIL_USER'] ?? '',
+        'pw' => $_ENV['MAIL_PASSWORD'] ?? '',
+        'port' => $_ENV['MAIL_PORT'] ?? 'auto',
+        'auth' => $_ENV['MAIL_AUTH'] ?? 'plain',
     ],
     'i18n' => [
         'locale' => 'sv-SE',
