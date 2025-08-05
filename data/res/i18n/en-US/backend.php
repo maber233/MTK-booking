@@ -300,8 +300,13 @@ return [
     'Allow min. bookable time block for admins only' => 'Allow min. bookable time block for admins only',
     'Users still can only book the normal time blocks then' => 'Users still can only book the normal time blocks then',
     'Time block (max. bookable)' => 'Time block (max. bookable)',
+    'Advanced booking' => 'Advanced booking',
+    'Set to 0 to book the next free timeslot' => 'Set to 0 to book the next free timeslot',
     'Booking range' => 'Booking range',
     'How many days in advance<br>can squares be booked?' => 'How many days in advance<br>can squares be booked?',
+    'Restrict bookings' => 'Restrict bookings',
+    'Set to 0 to allow unlimited bookings' => 'Set to 0 to allow unlimited bookings',
+    'simultaneous booking(s) per user' => 'simultaneous booking(s) per user',
     'Cancel range' => 'Cancel range',
     'Until when may bookings be cancelled?<br>Set to 0 to never allow.<br>Set to 0.01 for some seconds (practically always).'
         => 'Until when may bookings be cancelled?<br>Set to 0 to never allow.<br>Set to 0.01 for some seconds (practically always).',

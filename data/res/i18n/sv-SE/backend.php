@@ -298,8 +298,13 @@ return [
     'Allow min. bookable time block for admins only' => 'Tillåt min. bokningsbar tidsblock endast för administratörer',
     'Users still can only book the normal time blocks then' => 'Användare kan fortfarande endast boka normala tidsblock då',
     'Time block (max. bookable)' => 'Tidsblock (max. bokningsbar)',
+    'Advanced booking' => 'Avancerad bokning',
+    'Set to 0 to book the next free timeslot' => 'Sätt till 0 för att boka nästa lediga tidslucka',
     'Booking range' => 'Bokningsintervall',
     'How many days in advance<br>can squares be booked?' => 'Hur många dagar i förväg<br>kan platser bokas?',
+    'Restrict bookings' => 'Begränsad bokning',
+    'Set to 0 to allow unlimited bookings' => 'Sätt till 0 för att tillåta obegränsade bokningar',
+    'simultaneous booking(s) per user' => 'samtidig bokning(ar) per användare',
     'Cancel range' => 'Avbokningsintervall',
     'Until when may bookings be cancelled?<br>Set to 0 to never allow.<br>Set to 0.01 for some seconds (practically always).'
         => 'Till när får bokningar avbokas?<br>Sätt till 0 för att aldrig tillåta.<br>Sätt till 0.01 för några sekunder (praktiskt taget alltid).',

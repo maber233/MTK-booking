@@ -226,7 +226,7 @@ class EditForm extends Form
             ),
             'options' => array(
                 'label' => 'Buchungsvorlauf',
-                'notes' => 'Auf 0 setzen, um den nächsten freien Zeitblock buchen zu dürfen',
+                'notes' => 'Set to 0 to book the next free timeslot',
                 'postfix' => 'Minuten',
             ),
         ));
@@ -253,9 +253,9 @@ class EditForm extends Form
                 'style' => 'width: 80px;',
             ),
             'options' => array(
-                'label' => 'Buchungen einschränken',
-                'notes' => 'Auf 0 setzen, um beliebig viele Buchungen zu erlauben',
-                'postfix' => 'gleichzeitige Buchung(en) pro Benutzer',
+                'label' => 'Restrict bookings',
+                'notes' => 'Set to 0 to allow unlimited bookings',
+                'postfix' => 'simultaneous booking(s) per user',
             ),
         ));
 
