@@ -9,7 +9,14 @@ $this->setup(array(
     'back' => true,
 ));
 
-echo $this->ajaxAwareScript('js/controller/square/booking/customization.min.js');
+// Force inline script to ensure it always loads regardless of AJAX detection
+$scriptPath = getcwd() . '/public/js/controller/square/booking/customization.min.js';
+if (is_readable($scriptPath)) {
+    echo '<script type="text/javascript">' . file_get_contents($scriptPath) . '</script>';
+} else {
+    // Fallback to external script
+    echo $this->ajaxAwareScript('js/controller/square/booking/customization.min.js');
+}
 
 ?>
 
