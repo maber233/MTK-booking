@@ -108,5 +108,20 @@ MAIL_AUTH=plain
 ## Current Status
 
 ✅ **Fixed**: Email configuration now works reliably in Railway environment  
+✅ **Fixed**: User activation set to email mode (users can request activation emails)  
 ✅ **Default**: File-based email storage (safe for testing)  
 📧 **Ready**: SMTP configuration available via environment variables  
+
+## User Activation Fix
+
+The system now automatically configures user activation to use email mode, which means:
+- ✅ Users can register and receive activation emails
+- ✅ Users can request new activation emails if needed  
+- ✅ The "You cannot manually activate your account currently" error is fixed
+
+## How User Activation Works
+
+1. **User registers** → Account created in "disabled" state
+2. **System sends activation email** → Contains activation link  
+3. **User clicks link** → Account becomes "enabled"
+4. **User can now login** → Full access to booking system  
