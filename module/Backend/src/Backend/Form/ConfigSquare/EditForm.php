@@ -136,7 +136,7 @@ class EditForm extends Form
                 'id' => 'cf-allow-notes',
             ),
             'options' => array(
-                'label' => 'Erlaube optionale Anmerkungen bei der Buchung',
+                'label' => 'Allow optional notes when booking',
             ),
         ));
 

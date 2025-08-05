@@ -289,6 +289,7 @@ return [
     'Multiple bookings' => 'Multiple bookings',
     'May this square be booked multiple times until its full?'
         => 'May this square be booked multiple times until it\'s full?',
+    'Allow optional notes when booking' => 'Allow optional notes when booking',
     'Visibility of names' => 'Visibility of names',
     'For other users that are logged in' => 'For other users that are logged in',
     'Publicly for everyone' => 'Publicly for everyone',

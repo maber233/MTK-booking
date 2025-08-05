@@ -288,6 +288,7 @@ return [
     'Multiple bookings' => 'Flera bokningar',
     'May this square be booked multiple times until its full?'
         => 'Får denna plats bokas flera gånger tills den är full?',
+    'Allow optional notes when booking' => 'Tillåt valfria anteckningar vid bokning',
     'Visibility of names' => 'Synlighet av namn',
     'For other users that are logged in' => 'För andra inloggade användare',
     'Publicly for everyone' => 'Offentligt för alla',
