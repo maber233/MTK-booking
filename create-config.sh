@@ -16,7 +16,7 @@ return [
         'address' => 'info@bookings.example.com',
     ],
     'i18n' => [
-        'locale' => 'en-US',
+        'locale' => 'sv-SE',
         'timezone' => 'Europe/Stockholm',
         'choice' => [
             'en-US' => 'English',
