@@ -72,7 +72,7 @@ return [
     'Privacy' => 'Integritet',
 
     'You need to activate %sJavaScript%s in you web browser to proceed. If in doubt, switch to another web browser (e.g. Mozilla Firefox).'
-        => 'Du måste aktivera %sJavaScript%s i din webbläsare för att fortsätta. %s Vid tvivel, byt till en annan webbläsare (t.ex. Mozilla Firefox).',
+        => 'Du måste aktivera %sJavaScript%s i din webbläsare för att fortsätta. Vid tvivel, byt till en annan webbläsare (t.ex. Mozilla Firefox).',
 
     'Square' => 'Plan',
     'Squares' => 'Planer',
