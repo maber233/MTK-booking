@@ -225,9 +225,9 @@ class EditForm extends Form
                 'style' => 'width: 80px;',
             ),
             'options' => array(
-                'label' => 'Buchungsvorlauf',
+                'label' => 'Advance booking',
                 'notes' => 'Set to 0 to book the next free timeslot',
-                'postfix' => 'Minuten',
+                'postfix' => 'Minutes',
             ),
         ));
 
