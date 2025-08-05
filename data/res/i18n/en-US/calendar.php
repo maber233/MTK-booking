@@ -2,30 +2,30 @@
 
 return [
 
-    'The passed calendar date is invalid' => 'Dieses Kalenderdatum ist ungültig',
-    'The passed calendar squares are invalid' => 'Diese Kalenderanzeige ist ungültig',
+    'The passed calendar date is invalid' => 'The passed calendar date is invalid',
+    'The passed calendar squares are invalid' => 'The passed calendar squares are invalid',
 
-    'Morning' => 'Morgens',
-    'Afternoon' => 'Nachmittags',
+    'Morning' => 'Morning',
+    'Afternoon' => 'Afternoon',
 
-    'Past' => 'Vorbei',
-    'Too far' => 'Zu fern',
-    'Closed' => 'Geschlossen',
-    'Free' => 'Frei',
-    'Still free' => 'Noch frei',
-    'Conflict' => 'Konflikt',
-    'Occupied' => 'Belegt',
+    'Past' => 'Past',
+    'Too far' => 'Too far',
+    'Closed' => 'Closed',
+    'Free' => 'Free',
+    'Still free' => 'Still free',
+    'Conflict' => 'Conflict',
+    'Occupied' => 'Occupied',
 
-    'Your Booking' => 'Ihre Buchung',
+    'Your Booking' => 'Your Booking',
 
-    'Loading' => 'Wird geladen',
-    'Please wait' => 'Bitte warten',
+    'Loading' => 'Loading',
+    'Please wait' => 'Please wait',
 
-    'Arrival' => 'Anreise',
-    'Departure' => 'Abreise',
+    'Arrival' => 'Arrival',
+    'Departure' => 'Departure',
 
-    'Our %s for the time' => 'Unsere %s für den Zeitraum',
-    'Invalid date choice' => 'Ungültige Auswahl',
-    'Persons' => 'Personen',
+    'Our %s for the time' => 'Our %s for the time',
+    'Invalid date choice' => 'Invalid date choice',
+    'Persons' => 'Persons',
 
 ];

@@ -2,44 +2,44 @@
 
 return [
 
-    'Booking' => 'Buchung',
-    '%s-Booking' => '%s-Buchung',
+    'Booking' => 'Booking',
+    '%s-Booking' => '%s-Booking',
 
-    'Single' => 'Einzelbuchung',
-    'Subscription' => 'Abo',
-    'Cancelled' => 'Storniert',
+    'Single' => 'Single Booking',
+    'Subscription' => 'Subscription',
+    'Cancelled' => 'Cancelled',
 
-    'Pending' => 'Ausstehend',
-    'Paid' => 'Bezahlt',
-    'Uncollectable' => 'Uneinbringlich',
+    'Pending' => 'Pending',
+    'Paid' => 'Paid',
+    'Uncollectable' => 'Uncollectable',
 
-    'Public' => 'Sichtbar',
-    'Private' => 'Unsichtbar',
+    'Public' => 'Public',
+    'Private' => 'Private',
 
-    'Only once' => 'Einmalig',
-    'Daily' => 'Täglich',
-    'Every 2 days' => 'Alle 2 Tage',
-    'Every 3 days' => 'Alle 3 Tage',
-    'Every 4 days' => 'Alle 4 Tage',
-    'Every 5 days' => 'Alle 5 Tage',
-    'Every 6 days' => 'Alle 6 Tage',
-    'Weekly' => 'Wöchentlich',
-    'Every 2 weeks' => 'Alle 2 Wochen',
-    'Monthly' => 'Monatlich',
+    'Only once' => 'Only once',
+    'Daily' => 'Daily',
+    'Every 2 days' => 'Every 2 days',
+    'Every 3 days' => 'Every 3 days',
+    'Every 4 days' => 'Every 4 days',
+    'Every 5 days' => 'Every 5 days',
+    'Every 6 days' => 'Every 6 days',
+    'Weekly' => 'Weekly',
+    'Every 2 weeks' => 'Every 2 weeks',
+    'Monthly' => 'Monthly',
 
     'Ambiguous user name "%s" passed (multiple users under this name)'
-        => 'Es gibt mehrere Benutzer mit dem Namen "%s"',
+        => 'Ambiguous user name "%s" passed (multiple users under this name)',
 
-    'This booking does not exist' => 'Diese Buchung gibt es nicht',
-    'This reservation does not exist' => 'Diese Reservierung gibt es nicht',
+    'This booking does not exist' => 'This booking does not exist',
+    'This reservation does not exist' => 'This reservation does not exist',
 
-    'Your %s-booking for %s' => 'Ihre %s-Buchung am %s',
+    'Your %s-booking for %s' => 'Your %s-booking for %s',
     'we have reserved %s %s, %s for you. Thank you for your booking.'
-        => 'wir haben %s %s am %s für Sie reserviert. Vielen Dank für Ihre Buchung.',
+        => 'we have reserved %s %s, %s for you. Thank you for your booking.',
     'we have just cancelled %s %s, %s for you.'
-        => 'wir haben Ihre Buchung für %s %s, %s storniert.',
+        => 'we have just cancelled %s %s, %s for you.',
 
-    '%s\'s %s-booking for %s' => '%s\'s %s-Buchung am %s',
-    '%s\'s %s-booking has been cancelled' => '%s\'s %s-Buchung wurde storniert',
+    '%s\'s %s-booking for %s' => '%s\'s %s-booking for %s',
+    '%s\'s %s-booking has been cancelled' => '%s\'s %s-booking has been cancelled',
 
 ];

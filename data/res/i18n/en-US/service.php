@@ -2,17 +2,17 @@
 
 return [
 
-    'System status' => 'Status des Systems',
-    'Maintenance' => 'Wartungsarbeiten',
+    'System status' => 'System status',
+    'Maintenance' => 'Maintenance',
 
-    'Help' => 'Hilfe',
+    'Help' => 'Help',
 
-    'We are currently working on this page.' => 'Diese Seite ist leider noch nicht fertig.',
+    'We are currently working on this page.' => 'We are currently working on this page.',
 
-    'The system is currently not available' => 'Das System ist derzeit nicht verfügbar',
-    'System maintenance underway' => 'Es finden gerade Wartungsarbeiten statt',
-    'We are back as fast as we can. Promised!' => 'Wir sind so schnell wie möglich wieder für Sie da!',
+    'The system is currently not available' => 'The system is currently not available',
+    'System maintenance underway' => 'System maintenance underway',
+    'We are back as fast as we can. Promised!' => 'We are back as fast as we can. Promised!',
 
-    'The system is available' => 'Das System ist verfügbar',
+    'The system is available' => 'The system is available',
 
 ];
