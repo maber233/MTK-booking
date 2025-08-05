@@ -17,11 +17,9 @@ return [
     ],
     'i18n' => [
         'locale' => 'en-US',
-        'timezone' => 'Europe/Berlin',
+        'timezone' => 'Europe/Stockholm',
         'choice' => [
-            'en-US' => 'English (US)',
-            'de-DE' => 'Deutsch',
-            'fr-FR' => 'Français',
+            'en-US' => 'English',
             'sv-SE' => 'Svenska',
         ],
     ],
