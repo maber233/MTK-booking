@@ -1,0 +1,9 @@
+# Ignore files for Google Cloud builds
+data/
+log/
+*.md
+*.sql
+.git/
+.gitignore
+node_modules/
+.DS_Store
