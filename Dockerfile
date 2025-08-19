@@ -20,14 +20,27 @@ RUN a2enmod rewrite
 # Copy application code
 COPY . /var/www/html/
 
-# Create vendor directory (for autoloader)
-RUN mkdir -p /var/www/html/vendor
 
-# Copy config template to actual config file
-RUN cp /var/www/html/config/init.php.dist /var/www/html/config/init.php
+# Install Composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 # Set working directory
 WORKDIR /var/www/html
+
+# Install PHP dependencies
+RUN composer install --ignore-platform-reqs --no-dev --optimize-autoloader
+
+# Rename config files and set up environment
+RUN mv config/init.php.dist config/init.php \
+    && mv config/autoload/local.php.dist config/autoload/local.php \
+    && mv public/.htaccess_original public/.htaccess || mv public/.htaccess_alternative public/.htaccess
+
+# Set permissions for writable directories
+RUN chmod -R 777 data/cache/ data/log/ data/session/ public/docs-client/upload/ public/imgs-client/upload/
+
+# Remove setup tool and clear cache after setup
+RUN rm -f public/setup.php \
+    && rm -rf data/cache/*
 
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html
