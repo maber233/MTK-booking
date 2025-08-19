@@ -20,6 +20,12 @@ RUN a2enmod rewrite
 # Copy application code
 COPY . /var/www/html/
 
+# Create vendor directory (for autoloader)
+RUN mkdir -p /var/www/html/vendor
+
+# Copy config template to actual config file
+RUN cp /var/www/html/config/init.php.dist /var/www/html/config/init.php
+
 # Set working directory
 WORKDIR /var/www/html
 
