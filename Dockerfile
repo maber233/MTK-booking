@@ -32,8 +32,12 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Set working directory
 WORKDIR /var/www/html
 
-# Install PHP dependencies
-RUN composer install --ignore-platform-reqs --no-dev --optimize-autoloader
+# Fix git ownership issue for Composer
+RUN git config --global --add safe.directory /var/www/html
+
+# Update Composer lock file and install PHP dependencies
+RUN composer update --lock --ignore-platform-reqs --no-dev \
+    && composer install --ignore-platform-reqs --no-dev --optimize-autoloader
 
 # Rename config files and set up environment
 RUN mv config/init.php.dist config/init.php \
