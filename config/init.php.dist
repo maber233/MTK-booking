@@ -20,14 +20,19 @@ const EP3_BS_DEV_TAG = true;
  */
 ini_set('date.timezone', 'Europe/Berlin');
 
-
-
 /**
- * The following settings are more technical and can usually be ignored.
+ * Enhanced error logging for Cloud Run debugging
  */
+ini_set('error_reporting', E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+ini_set('log_errors', 1);
+ini_set('error_log', 'php://stderr'); // Send errors to stderr (Cloud Run captures this)
 
-ini_set('error_reporting', E_ALL & ~E_USER_DEPRECATED);
-ini_set('error_log', getcwd() . '/data/log/errors.txt');
+// Additional debugging
+error_log("INIT: PHP configuration loaded successfully");
+error_log("INIT: PHP version: " . phpversion());
+error_log("INIT: Current working directory: " . getcwd());
 
 ini_set('display_errors', EP3_BS_DEV_TAG ? 1 : 0);
 ini_set('display_startup_errors', EP3_BS_DEV_TAG ? 1 : 0);

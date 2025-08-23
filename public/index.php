@@ -3,16 +3,23 @@
  * ep-3 Bookingsystem Entry Point
  */
 
+error_log("INDEX: Starting MTK-booking application");
+error_log("INDEX: PHP version: " . PHP_VERSION);
+error_log("INDEX: Current working directory: " . getcwd());
+
 ob_start();
 
 chdir(dirname(__DIR__));
+error_log("INDEX: Changed directory to: " . getcwd());
 
 /**
  * Quickly check the current PHP version.
  */
 if (version_compare(PHP_VERSION, '8.1.0') < 0) {
+    error_log("INDEX: PHP version check failed");
     exit('PHP 8.1+ is required (currently running PHP ' . PHP_VERSION . ')');
 }
+error_log("INDEX: PHP version check passed");
 
 /**
  * Quickly check if the intl extension is installed.
