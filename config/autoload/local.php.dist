@@ -1,0 +1,27 @@
+<?php
+/**
+ * Local application configuration
+ *
+ * Copy this file to local.php and insert your database credentials
+ * and provide the email address the system should use.
+ */
+
+return [
+    'db' => [
+        'database' => 'YOUR_DATABASE_NAME',
+        'username' => 'YOUR_DATABASE_USERNAME', 
+        'password' => 'YOUR_DATABASE_PASSWORD',
+
+        'hostname' => '/cloudsql/PROJECT_ID:REGION:INSTANCE_ID',  // For Cloud SQL
+        'port' => null,
+    ],
+    'mail' => [
+        'type' => 'sendmail', // or 'smtp' or 'smtp-tls' (or 'file', to not send, but save to file (data/mails/))
+        'address' => 'info@your-domain.com',
+            // Make sure domain matches the hosting domain when using type 'sendmail'
+
+        'host' => '?', // for 'smtp' type only, otherwise remove or leave as is
+        'user' => '?', // for 'smtp' type only, otherwise remove or leave as is
+        'pw' => '?', // for 'smtp' type only, otherwise remove or leave as is
+    ],
+];

@@ -7,6 +7,10 @@
 
 composer.phar
 
+# Local configuration files (contain sensitive data)
+config/autoload/local.php
+config/init.php
+
 Desktop.ini
 Thumbs.db
 
