@@ -9,17 +9,6 @@
         "ext-intl": "*",
         "ext-pdo": "*",
 
-        "zendframework/zend-authentication": "^2.7.0",
-        "zendframework/zend-cache": "^2.9.0",
-        "zendframework/zend-console": "^2.8.0",
-        "zendframework/zend-debug": "^2.6.0",
-        "zendframework/zend-di": "^2.6.1",
-        "zendframework/zend-diactoros": "^2.2.1",
-        "zendframework/zend-file": "^2.8.3",
-        "zendframework/zend-i18n-resources": "^2.6.1",
-        "zendframework/zend-log": "^2.12.0",
-        "zendframework/zend-version": "^2.5.1",
-
         "true/punycode": "^2.1"
     },
 
