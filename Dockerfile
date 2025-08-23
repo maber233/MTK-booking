@@ -32,10 +32,10 @@ RUN composer install --ignore-platform-reqs --no-dev --optimize-autoloader
 
 # Rename config files and set up environment
 RUN mv config/init.php.dist config/init.php \
-    && mv config/autoload/local.php.dist config/autoload/local.php \
+    && mv config/autoload/local.cloudrun.php config/autoload/local.php \
     && mv public/.htaccess_original public/.htaccess || mv public/.htaccess_alternative public/.htaccess
 
-# Note: You'll need to customize local.php with actual database credentials
+# Note: Database credentials will be provided via environment variables
 
 # Set permissions for writable directories
 RUN chmod -R 777 data/cache/ data/log/ data/session/ public/docs-client/upload/ public/imgs-client/upload/
