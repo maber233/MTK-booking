@@ -10,7 +10,9 @@
         "ext-pdo": "*",
 
         "true/punycode": "^2.1",
-        "container-interop/container-interop": "^1.2"
+        "container-interop/container-interop": "^1.2",
+        "psr/container": "^1.1",
+        "zendframework/zend-log": "^2.12"
     },
 
     "autoload": {
