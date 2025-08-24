@@ -1,9 +1,38 @@
 <?php
-// Comprehensive autoloader for bu    // Step 1: Load all interface files first, sorted by dependency depth
+// Comprehensive autoloader for bu    // Step 1: Load critical base interfaces first (in dependency order)
+    $criticalInterfaces = [
+        '/src/Zend/Db/src/Exception/ExceptionInterface.php',
+        '/src/Zend/Db/src/Adapter/Exception/ExceptionInterface.php',
+    ];
+    
     $interfaceCount = 0;
+    foreach ($criticalInterfaces as $criticalPath) {
+        $fullPath = $basePath . $criticalPath;
+        if (file_exists($fullPath)) {
+            try {
+                error_log("AUTOLOADER: Loading critical interface: " . $fullPath);
+                require_once $fullPath;
+                $interfaceCount++;
+            } catch (Exception $e) {
+                error_log("AUTOLOADER: Error loading critical interface: " . $e->getMessage());
+            }
+        }
+    }
+    
+    // Step 2: Load remaining interface files, sorted by directory depth
     $interfaceFiles = [];
     foreach ($allFiles as $file) {
         try {
+            // Skip already loaded critical interfaces
+            $skipFile = false;
+            foreach ($criticalInterfaces as $criticalPath) {
+                if (str_ends_with($file, $criticalPath)) {
+                    $skipFile = true;
+                    break;
+                }
+            }
+            if ($skipFile) continue;
+            
             $content = file_get_contents($file);
             if (strpos($content, 'interface ') !== false && strpos($content, 'namespace Zend') !== false) {
                 // Determine dependency depth by counting directory levels from src/Zend
@@ -16,7 +45,7 @@
         }
     }
     
-    // Load interfaces by depth (shallowest first, to satisfy dependencies)
+    // Load remaining interfaces by depth (shallowest first)
     ksort($interfaceFiles);
     foreach ($interfaceFiles as $depth => $files) {
         foreach ($files as $file) {
