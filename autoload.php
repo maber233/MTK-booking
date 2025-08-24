@@ -1,5 +1,34 @@
 <?php
-// Comprehensive autoloader for bundled Zend Framework components
+// Comprehensive autoloader for bu    // Step 1: Load all interface files first, sorted by dependency depth
+    $interfaceCount = 0;
+    $interfaceFiles = [];
+    foreach ($allFiles as $file) {
+        try {
+            $content = file_get_contents($file);
+            if (strpos($content, 'interface ') !== false && strpos($content, 'namespace Zend') !== false) {
+                // Determine dependency depth by counting directory levels from src/Zend
+                $relativePath = str_replace($zendDir . '/', '', $file);
+                $depth = substr_count($relativePath, '/');
+                $interfaceFiles[$depth][] = $file;
+            }
+        } catch (Exception $e) {
+            error_log("AUTOLOADER: Error checking file: " . $e->getMessage());
+        }
+    }
+    
+    // Load interfaces by depth (shallowest first, to satisfy dependencies)
+    ksort($interfaceFiles);
+    foreach ($interfaceFiles as $depth => $files) {
+        foreach ($files as $file) {
+            try {
+                error_log("AUTOLOADER: Loading interface file (depth $depth): " . $file);
+                require_once $file;
+                $interfaceCount++;
+            } catch (Exception $e) {
+                error_log("AUTOLOADER: Error loading interface: " . $e->getMessage());
+            }
+        }
+    }mework components
 // Strategy: Load all interfaces first, then all classes to avoid dependency issues
 
 // Define the base path - hardcoded for Docker container
