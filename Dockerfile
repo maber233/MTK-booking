@@ -48,9 +48,9 @@ RUN mv config/init.php.dist config/init.php \
 # Set permissions for writable directories
 RUN chmod -R 777 data/cache/ data/log/ data/session/ public/docs-client/upload/ public/imgs-client/upload/
 
-# Remove setup tool and clear cache after setup
-RUN rm -f public/setup.php \
-    && rm -rf data/cache/*
+# Remove setup tool and clear cache after setup (keeping setup.php for initial setup)
+# RUN rm -f public/setup.php \
+RUN rm -rf data/cache/*
 
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html
