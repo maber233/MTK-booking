@@ -13,6 +13,7 @@
     RewriteRule ^setup\.php$ - [L]
     RewriteRule ^bootstrap\.php$ - [L]
     RewriteRule ^test-direct\.php$ - [L]
+    RewriteRule ^phpinfo\.php$ - [L]
     RewriteRule ^.*test\.php$ - [L]
     RewriteRule ^.*debug\.php$ - [L]
     RewriteRule ^.*-db\.php$ - [L]

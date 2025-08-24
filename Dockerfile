@@ -12,7 +12,9 @@ RUN apt-get update && apt-get install -y \
     libzip-dev \
     default-mysql-client \
     libicu-dev \
-    && docker-php-ext-install pdo_mysql mysqli intl
+    && docker-php-ext-configure intl \
+    && docker-php-ext-install pdo_mysql mysqli intl \
+    && php -m | grep intl
 
 # Enable Apache mod_rewrite
 RUN a2enmod rewrite
