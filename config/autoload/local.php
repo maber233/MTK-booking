@@ -18,8 +18,13 @@ return [
         ],
     ],
     'mail' => [
-        'type' => 'sendmail',
-        'address' => 'info@mtk-booking.com',
+        'type' => $_ENV['MAIL_TYPE'] ?? 'sendmail',
+        'address' => $_ENV['MAIL_ADDRESS'] ?? 'info@mtk-booking.com',
+        'host' => $_ENV['MAIL_HOST'] ?? 'localhost',
+        'user' => $_ENV['MAIL_USER'] ?? '',
+        'pw' => $_ENV['MAIL_PASSWORD'] ?? '',
+        'port' => $_ENV['MAIL_PORT'] ?? 'auto',
+        'auth' => $_ENV['MAIL_AUTH'] ?? 'plain',
     ],
     'i18n' => [
         'choice' => [

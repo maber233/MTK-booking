@@ -16,13 +16,15 @@ return [
         'port' => null,
     ],
     'mail' => [
-        'type' => 'sendmail', // or 'smtp' or 'smtp-tls' (or 'file', to not send, but save to file (data/mails/))
-        'address' => 'info@your-domain.com',
+        'type' => $_ENV['MAIL_TYPE'] ?? 'sendmail', // 'smtp', 'smtp-tls', 'sendmail', or 'file'
+        'address' => $_ENV['MAIL_ADDRESS'] ?? 'info@your-domain.com',
             // Make sure domain matches the hosting domain when using type 'sendmail'
 
-        'host' => '?', // for 'smtp' type only, otherwise remove or leave as is
-        'user' => '?', // for 'smtp' type only, otherwise remove or leave as is
-        'pw' => '?', // for 'smtp' type only, otherwise remove or leave as is
+        'host' => $_ENV['MAIL_HOST'] ?? 'localhost', // for 'smtp' type only
+        'user' => $_ENV['MAIL_USER'] ?? '', // for 'smtp' type only
+        'pw' => $_ENV['MAIL_PASSWORD'] ?? '', // for 'smtp' type only
+        'port' => $_ENV['MAIL_PORT'] ?? 'auto', // for 'smtp' type only
+        'auth' => $_ENV['MAIL_AUTH'] ?? 'plain', // for 'smtp' type only
     ],
     'i18n' => [
         'choice' => [
