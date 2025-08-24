@@ -29,17 +29,31 @@ try {
 }
 
 try {
-    $localConfig = include 'config/autoload/local.php';
-    echo "<p>✅ Local config loaded</p>";
-    echo "<pre>" . print_r($localConfig['db'], true) . "</pre>";
+    if (file_exists('config/autoload/local.php')) {
+        $localConfig = include 'config/autoload/local.php';
+        echo "<p>✅ Local config loaded</p>";
+        echo "<pre>" . print_r($localConfig['db'], true) . "</pre>";
+    } else {
+        echo "<p>❌ Local config file not found: config/autoload/local.php</p>";
+        echo "<p>Files in config/autoload/:</p>";
+        $files = scandir('config/autoload/');
+        echo "<pre>" . print_r($files, true) . "</pre>";
+        $localConfig = ['db' => []];
+    }
 } catch (Exception $e) {
     echo "<p>❌ Local config failed: " . $e->getMessage() . "</p>";
+    $localConfig = ['db' => []];
 }
 
 // Merge configs
 echo "<h2>2. Configuration Merging</h2>";
-$dbConfig = array_merge($config['db'], $localConfig['db']);
-echo "<pre>" . print_r($dbConfig, true) . "</pre>";
+if (isset($localConfig['db']) && isset($config['db'])) {
+    $dbConfig = array_merge($config['db'], $localConfig['db']);
+    echo "<pre>" . print_r($dbConfig, true) . "</pre>";
+} else {
+    echo "<p>❌ Cannot merge configs - missing data</p>";
+    $dbConfig = $config['db'] ?? [];
+}
 
 // Test Zend adapter creation
 echo "<h2>3. Zend Adapter Creation</h2>";
