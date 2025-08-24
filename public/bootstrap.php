@@ -79,8 +79,18 @@ try {
         // Add other minimal configurations that might be needed
         $minimalConfigs = [
             'client.name.full' => 'MTK-booking System',
+            'client.name.short' => 'MTK',
             'client.contact.email' => 'admin@mtk-booking.com',
-            'app.version' => '1.0.0'
+            'app.version' => '1.0.0',
+            'service.calendar.days' => '30',
+            'service.calendar.day-exceptions' => '[]',
+            'service.name.full' => 'MTK Booking Service',
+            'service.website' => 'https://mtk-booking.com',
+            'service.maintenance' => 'false',
+            'service.user.registration' => 'true',
+            'service.user.activation' => 'immediate',
+            'service.pricing.visibility' => 'public',
+            'subject.square.type.plural' => 'Bookings'
         ];
         
         foreach ($minimalConfigs as $key => $value) {
