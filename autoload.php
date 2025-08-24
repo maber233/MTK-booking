@@ -26,7 +26,7 @@
             // Skip already loaded critical interfaces
             $skipFile = false;
             foreach ($criticalInterfaces as $criticalPath) {
-                if (str_ends_with($file, $criticalPath)) {
+                if (substr($file, -strlen($criticalPath)) === $criticalPath) {
                     $skipFile = true;
                     break;
                 }
