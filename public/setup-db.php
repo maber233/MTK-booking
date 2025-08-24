@@ -46,22 +46,53 @@ echo "<h2>3. Import Database Structure</h2>";
 try {
     $sqlContent = file_get_contents($sqlFile);
     
-    // Split SQL into individual statements
-    $statements = array_filter(array_map('trim', explode(';', $sqlContent)));
+    echo "<p>📄 SQL content preview:</p>";
+    echo "<pre>" . htmlspecialchars(substr($sqlContent, 0, 500)) . "...</pre>";
+    
+    // Clean up the SQL content
+    $sqlContent = preg_replace('/--.*$/m', '', $sqlContent); // Remove comments
+    $sqlContent = preg_replace('/\/\*.*?\*\//s', '', $sqlContent); // Remove block comments
+    
+    // Split SQL into individual statements (more robust)
+    $statements = [];
+    $currentStatement = '';
+    $lines = explode("\n", $sqlContent);
+    
+    foreach ($lines as $line) {
+        $line = trim($line);
+        if (empty($line)) continue;
+        
+        $currentStatement .= $line . "\n";
+        
+        // Check if statement ends with semicolon
+        if (substr($line, -1) === ';') {
+            $statements[] = trim($currentStatement);
+            $currentStatement = '';
+        }
+    }
+    
+    // Add any remaining statement
+    if (!empty(trim($currentStatement))) {
+        $statements[] = trim($currentStatement);
+    }
+    
+    echo "<p>📊 Found " . count($statements) . " SQL statements</p>";
     
     $successCount = 0;
     $errorCount = 0;
     
-    foreach ($statements as $statement) {
-        if (empty($statement) || strpos($statement, '--') === 0) {
-            continue; // Skip empty lines and comments
+    foreach ($statements as $index => $statement) {
+        $statement = trim($statement);
+        if (empty($statement)) {
+            continue;
         }
         
         try {
             $pdo->exec($statement);
             $successCount++;
+            echo "<p>✅ Statement " . ($index + 1) . ": " . substr($statement, 0, 50) . "...</p>";
         } catch (PDOException $e) {
-            echo "<p>⚠️ Error in statement: " . substr($statement, 0, 50) . "...</p>";
+            echo "<p>❌ Error in statement " . ($index + 1) . ": " . substr($statement, 0, 50) . "...</p>";
             echo "<p>Error: " . $e->getMessage() . "</p>";
             $errorCount++;
         }
