@@ -24,4 +24,12 @@ return [
         'user' => '?', // for 'smtp' type only, otherwise remove or leave as is
         'pw' => '?', // for 'smtp' type only, otherwise remove or leave as is
     ],
+    'i18n' => [
+        'choice' => [
+            'en-US' => 'English',
+            'de-DE' => 'Deutsch',
+        ],
+        'currency' => 'EUR',
+        'locale' => 'de-DE',
+    ],
 ];

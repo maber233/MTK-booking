@@ -21,4 +21,12 @@ return [
         'type' => 'sendmail',
         'address' => 'info@mtk-booking.com',
     ],
+    'i18n' => [
+        'choice' => [
+            'en-US' => 'English',
+            'de-DE' => 'Deutsch',
+        ],
+        'currency' => 'EUR',
+        'locale' => 'de-DE',
+    ],
 ];
