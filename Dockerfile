@@ -35,8 +35,8 @@ WORKDIR /var/www/html
 # Fix git ownership issue for Composer
 RUN git config --global --add safe.directory /var/www/html
 
-# Update Composer lock file and install PHP dependencies
-RUN composer update --lock --ignore-platform-reqs --no-dev \
+# Remove old lock file and install dependencies fresh
+RUN rm -f composer.lock \
     && composer install --ignore-platform-reqs --no-dev --optimize-autoloader
 
 # Rename config files and set up environment
