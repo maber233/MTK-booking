@@ -6,7 +6,7 @@
 
 return [
     'db' => [
-        'database' => $_ENV['DB_NAME'] ?? 'mtk-db',
+        'database' => $_ENV['DB_NAME'] ?? 'mtk_booking',
         'username' => $_ENV['DB_USER'] ?? 'mtk_booking',
         'password' => $_ENV['DB_PASSWORD'] ?? '',
 
