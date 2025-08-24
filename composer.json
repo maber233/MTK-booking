@@ -25,31 +25,6 @@
 
     "autoload": {
         "psr-4": {
-            "Zend\\Config\\": "src/Zend/Config/src/",
-            "Zend\\Crypt\\": "src/Zend/Crypt/src/",
-            "Zend\\Db\\": "src/Zend/Db/src/",
-            "Zend\\Escaper\\": "src/Zend/Escaper/src/",
-            "Zend\\EventManager\\": "src/Zend/EventManager/src/",
-            "Zend\\Filter\\": "src/Zend/Filter/src/",
-            "Zend\\Form\\": "src/Zend/Form/src/",
-            "Zend\\Http\\": "src/Zend/Http/src/",
-            "Zend\\Hydrator\\": "src/Zend/Hydrator/src/",
-            "Zend\\I18n\\": "src/Zend/I18n/src/",
-            "Zend\\InputFilter\\": "src/Zend/InputFilter/src/",
-            "Zend\\Json\\": "src/Zend/Json/src/",
-            "Zend\\Loader\\": "src/Zend/Loader/src/",
-            "Zend\\Mail\\": "src/Zend/Mail/src/",
-            "Zend\\Math\\": "src/Zend/Math/src/",
-            "Zend\\Mime\\": "src/Zend/Mime/src/",
-            "Zend\\ModuleManager\\": "src/Zend/ModuleManager/src/",
-            "Zend\\Mvc\\": "src/Zend/Mvc/src/",
-            "Zend\\Serializer\\": "src/Zend/Serializer/src/",
-            "Zend\\ServiceManager\\": "src/Zend/ServiceManager/src/",
-            "Zend\\Session\\": "src/Zend/Session/src/",
-            "Zend\\Stdlib\\": "src/Zend/Stdlib/src/",
-            "Zend\\Uri\\": "src/Zend/Uri/src/",
-            "Zend\\Validator\\": "src/Zend/Validator/src/",
-            "Zend\\View\\": "src/Zend/View/src/"
         }
     }
 }

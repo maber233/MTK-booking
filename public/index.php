@@ -30,17 +30,6 @@ if (! extension_loaded('intl')) {
 }
 
 /**
- * Load custom autoloader for bundled Zend components first
- */
-$customAutoloader = 'autoload.php';
-if (is_readable($customAutoloader)) {
-    error_log("INDEX: Loading custom autoloader for bundled Zend components");
-    require $customAutoloader;
-} else {
-    error_log("INDEX: Custom autoloader not found at: " . $customAutoloader);
-}
-
-/**
  * We are using composer (getcomposer.org) to install and autoload the dependencies.
  * Composer will create the entire vendor directory for us, including the autoloader.
  */
