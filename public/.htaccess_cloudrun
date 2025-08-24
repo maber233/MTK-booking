@@ -11,6 +11,8 @@
 
     # Allow direct access to setup files and utility scripts
     RewriteRule ^setup\.php$ - [L]
+    RewriteRule ^bootstrap\.php$ - [L]
+    RewriteRule ^test-direct\.php$ - [L]
     RewriteRule ^.*test\.php$ - [L]
     RewriteRule ^.*debug\.php$ - [L]
     RewriteRule ^.*-db\.php$ - [L]
