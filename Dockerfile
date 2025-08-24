@@ -41,7 +41,6 @@ RUN rm -f composer.lock \
 
 # Rename config files and set up environment
 RUN mv config/init.php.dist config/init.php \
-    && mv config/autoload/local.cloudrun.php config/autoload/local.php \
     && mv public/.htaccess_original public/.htaccess || mv public/.htaccess_alternative public/.htaccess
 
 # Note: Database credentials will be provided via environment variables
